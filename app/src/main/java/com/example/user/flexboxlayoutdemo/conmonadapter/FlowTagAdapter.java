@@ -40,8 +40,9 @@ public class FlowTagAdapter extends TagAdapter<TagInfo> {
         //通过获取父布局，来设置长点击事件
         checkBox.post(new Runnable() {
             @Override
-            public void run() { //避免创建事件监听的时候，控件还未实例化
+            public void run() { //避免创建事件监听的时候，控件还未实例化而造成空指针异常
 
+                //为了避免影响选中事件,需要对其父控件(TagView)添加长按事件
                 ViewParent parent1 = checkBox.getParent();
                 if (null == parent1) return;
                 TagView tagView = (TagView) parent1;
