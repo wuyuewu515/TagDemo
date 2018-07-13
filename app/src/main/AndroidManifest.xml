@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".FlexBoxActivity" />
+        <activity android:name=".FlowActivity" />
     </application>
 
 </manifest>

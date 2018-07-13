@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextView tv_result;
 
     private String jsonStr_flex = ""; //当前选中的标签json数据格式
+    private String jsonStr_flow = ""; //当前选中的标签json数据格式
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             break;
             case R.id.btn_float: {//float
+                intent = new Intent(this, FlowActivity.class);
+                intent.putExtra("jsonStr", jsonStr_flow);
+                startActivityForResult(intent, 1002);
 
             }
         }
@@ -57,6 +61,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     if (!TextUtils.isEmpty(dataStr)) {
                         jsonStr_flex = dataStr; //将上个界面返回json格式数据保存
                         tv_result.setText("flexBox方法选中的标签是：" + dataStr);
+                    }
+                }
+                break;
+                case 1002: { //flow布局实现
+                    if (!TextUtils.isEmpty(dataStr)) {
+                        jsonStr_flow = dataStr; //将上个界面返回数据保存
+                        tv_result.setText("flexfLow方法选中的标签是：" + jsonStr_flow);
                     }
                 }
                 break;

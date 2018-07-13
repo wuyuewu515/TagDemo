@@ -6,9 +6,16 @@
     android:orientation="vertical"
     tools:context="com.example.user.flexboxlayoutdemo.MainActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="FlexBox 方法" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyleview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp" />
 
 </LinearLayout>
